@@ -4,7 +4,10 @@ import Ticket from "./Ticket";
 function TicketList(props){
 
     return (
-        <Ticket />
+        <Ticket
+            location="3a"
+            names="Kass and Puck"
+            issue="Kibbles won't render!?"/>
     );
 }
 
