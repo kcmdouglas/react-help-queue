@@ -1,7 +1,9 @@
 class Ticket {
-	constructor(names, location, issue) {
-		this.names = names;
-		this.location = location;
-		this.issue = issue;
-	}
+  constructor(names, location, description) {
+    this.names = names;
+    this.location = location;
+    this.description = description;
+  }
 }
+
+export default Ticket;

@@ -5,7 +5,7 @@ import NewTicketControl from './NewTicketControl';
 class Queue extends React.Component {
 	constructor(props) {
 		super(props);
-		this.this.state. = {
+		this.state = {
 			masterTicketList: [],
 		};
 		this.addNewTicketToList = this.addNewTicketToList.bind(this);

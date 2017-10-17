@@ -1,5 +1,6 @@
 import React from "react";
-import Ticket from "../models/Ticket.js"
+import Ticket from "../models/Ticket.js";
+import PropTypes from "prop-types";
 
 class NewTicketForm extends React.Component {
 
@@ -10,12 +11,14 @@ class NewTicketForm extends React.Component {
 
   handleNewTicketFormSubmission(event) {
     event.preventDefault()
-    const {_names, _location, _issue} = this.refs;
+    const { _names, _location, _issue } = this.refs;
     var newTicket = new Ticket(_names.value, _location.value, _issue.value);
-    console.log(newTicket);
+    console.log(this);
+    this.props.onNewTicketCreation(newTicket);
+    this.props.hideFormAfterSubmission();
   }
 
-  render(){
+  render() {
     return (
       <div>
         <form onSubmit={this.handleNewTicketFormSubmission}>
@@ -34,12 +37,18 @@ class NewTicketForm extends React.Component {
             type="text"
             id="issue"
             placeholder="Describe your issue."/>
-          <button type="submit">Help...</button>
+          <button type="submit">Pls Halp!</button>
         </form>
+
       </div>
     );
   }
 
+}
+
+NewTicketForm.propTypes = {
+  onNewTicketCreation: PropTypes.func,
+  hideFormAfterSubmission: PropTypes.func
 }
 
 export default NewTicketForm;
